@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Arabic and Urdu text styling */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+  text-align: right;
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced button hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Response styling */
+.response-bullet {
+  @apply text-yellow-400 mr-2;
+}
+
+.response-text {
+  @apply text-teal-50 leading-relaxed;
+}
+
+/* RTL support for responses */
+[dir="rtl"] .response-bullet {
+  @apply ml-2 mr-0;
+}
+
+/* Animation for responses */
+.response-enter {
+  @apply opacity-0 transform translate-y-4;
+}
+
+.response-enter-active {
+  @apply opacity-100 transform translate-y-0 transition-all duration-300;
+}
+
+/* Source citation styling */
+.source-citation {
+  @apply text-sm text-teal-200/70 mt-2 italic;
+}
+
+/* Confidence indicator animation */
+@keyframes confidenceFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.confidence-bar {
+  animation: confidenceFill 1s ease-out;
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor {
+  animation: blink 1s infinite;
+}
