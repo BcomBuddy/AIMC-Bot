@@ -8,7 +8,11 @@ import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { RetrievalQAChain } from "langchain/chains";
 
 // OpenAI API key configuration
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || "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";
+const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || "sk-proj-ezkgz1hLkQy_GwFsccz-DbFb_r1ik0Zr3PXA7W4LWBW33dHYDwyyxwwh8EaOAv7T1jf3cmT60T3BlbkFJcibH7lR0Ai74KYYPHmbNMVXvz96ouV0hWuodAJrV-SrSmDuk8TJVPu5h1ocFAFxHlPYqgk4SQA";
+
+// Debug: Log API key status
+console.log("Environment variable VITE_OPENAI_API_KEY:", import.meta.env.VITE_OPENAI_API_KEY ? "Set" : "Not set");
+console.log("Using API key:", OPENAI_API_KEY.substring(0, 20) + "...");
 
 // Configure OpenAI globally
 import { OpenAI } from "openai";
