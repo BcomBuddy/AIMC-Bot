@@ -5,11 +5,12 @@
   # Directory to publish
   publish = "dist"
   
-  # Node.js version
+  # Environment variables
   [build.environment]
     NODE_VERSION = "18"
     NPM_VERSION = "9"
     NODE_OPTIONS = "--max-old-space-size=4096"
+    VITE_OPENAI_API_KEY = "your-openai-api-key-here"
 
 # Redirect rules for SPA
 [[redirects]]
@@ -39,6 +40,3 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Environment variables (set these in Netlify dashboard)
-[build.environment]
-  VITE_OPENAI_API_KEY = "your-openai-api-key-here"
