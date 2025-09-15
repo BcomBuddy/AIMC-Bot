@@ -10,7 +10,6 @@
     NODE_VERSION = "18"
     NPM_VERSION = "9"
     NODE_OPTIONS = "--max-old-space-size=4096"
-    VITE_OPENAI_API_KEY = "your-openai-api-key-here"
 
 # Redirect rules for SPA
 [[redirects]]
@@ -39,4 +38,5 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
 
