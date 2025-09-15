@@ -1,22 +1,24 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Simple Vite config for deployment
+// Simple Vite config that avoids LangChain build issues
 export default defineConfig({
   plugins: [react()],
   define: {
     global: 'globalThis',
   },
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',
-    target: 'es2015',
+    minify: false,
     rollupOptions: {
-      external: [],
       output: {
-        format: 'es'
+        manualChunks: undefined
       }
-    }
+    },
+    chunkSizeWarningLimit: 2000
   }
 });

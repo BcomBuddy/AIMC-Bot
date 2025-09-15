@@ -1,6 +1,6 @@
 [build]
-  # Build command
-  command = "npm run build:netlify"
+  # Build command - use simple approach
+  command = "npm install --legacy-peer-deps && npx vite build --config vite.config.simple.ts"
   
   # Directory to publish
   publish = "dist"

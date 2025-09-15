@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:standard": "vite build",
-    "build:netlify": "vite build --config vite.config.prod.ts",
+    "build:netlify": "node build-fallback.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
