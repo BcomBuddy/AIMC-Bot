@@ -206,8 +206,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ language, onBack }) => {
             <div
               key={message.id}
               className={`flex items-start space-x-2 sm:space-x-3 ${
-                message.sender === 'user' || isUrdu ? 'justify-end' : 'justify-start'
-              } ${isUrdu ? 'flex-row-reverse space-x-reverse' : ''}`}
+                message.sender === 'user' ? 'justify-end' : 'justify-start'
+              }`}
             >
               <div className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${
                 message.sender === 'user' 
@@ -233,7 +233,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ language, onBack }) => {
                          : message.hasDocument
                            ? 'bg-gradient-to-br from-indigo-50 to-purple-50 text-indigo-900 border-2 border-indigo-200'
                            : 'bg-white text-teal-900 border-2 border-teal-100'
-                     } ${isUrdu ? 'text-right mr-0 ml-auto' : 'text-left'}`}>
+                     } text-left`}>
                        <div className="leading-relaxed" dir={isUrdu ? 'rtl' : 'ltr'}>
                          {typeof message.content === 'string' ? (
                            <p>{message.content}</p>
@@ -245,7 +245,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ language, onBack }) => {
                   message.sender === 'user' 
                     ? message.hasDocument ? 'text-purple-100' : 'text-yellow-100'
                     : message.hasDocument ? 'text-indigo-500' : 'text-teal-500'
-                } ${isUrdu ? 'text-left' : 'text-right'}`}>
+                } text-right`}>
                   {message.timestamp.toLocaleTimeString()}
                 </p>
               </div>
@@ -321,7 +321,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ language, onBack }) => {
             </div>
           )}
           
-          <div className={`flex items-end ${isUrdu ? 'space-x-2 sm:space-x-4 space-x-reverse flex-row-reverse' : 'space-x-2 sm:space-x-4'} group`}>
+          <div className="flex items-end space-x-2 sm:space-x-4 group">
             {/* Document Upload */}
                    <DocumentUpload
                      onDocumentProcessed={handleDocumentProcessed}
